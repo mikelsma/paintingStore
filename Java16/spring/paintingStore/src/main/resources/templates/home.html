@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:the="https://www.thymeleaf.com">
 <head>
 
 
@@ -24,17 +24,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Available Paintings</a>
+                    <a class="nav-link text-white" href="available_paintings">Available Paintings</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#">My Paintings</a>
                 </li>
             </ul>
             <div>
-                <a class="nav-link text-white" href="#">New Painting Register</a>
+                <a class="nav-link text-white" href="painting_register">New Painting Register</a>
+                <!--we need to redirect paiting_register to painting controller path-->
             </div>
         </div>
     </div>
