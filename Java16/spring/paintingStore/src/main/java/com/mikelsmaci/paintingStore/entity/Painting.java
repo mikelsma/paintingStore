@@ -18,6 +18,7 @@ public class Painting {
     //then we add a constructor
 
     public Painting(int id, String name, String author, String price) {
+        super();
         this.id = id;
         this.name = name;
         this.author = author;
