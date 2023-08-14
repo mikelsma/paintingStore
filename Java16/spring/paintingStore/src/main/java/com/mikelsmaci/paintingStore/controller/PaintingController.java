@@ -6,6 +6,9 @@ import com.mikelsmaci.paintingStore.service.PaintingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 
 @Controller
@@ -26,8 +29,10 @@ public class PaintingController {
     }
     // we add a path for available_paintings
     @GetMapping("/available_paintings")
-    public String getAllPaintings() {
-        return "paintingList";
+    public ModelAndView getAllPaintings() {
+        List<Painting>list=service.getAllPainting();
+        //create a modelandview object and go and make changes to html paiting list
+        return new ModelAndView("paintingList", "painting", list);
         //now we go to template and create a new html file paintingList
     }
     //we add a path for save method by using postmapping
@@ -38,5 +43,9 @@ public class PaintingController {
         service.save(painting);
         //we redirect this to available paintings
         return "redirect:/available_paintings";
+    }
+    @GetMapping("/my_paintings")
+    public String getMyPaintings() {
+        return "myPaintings";
     }
 }
