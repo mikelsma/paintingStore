@@ -1,7 +1,9 @@
 package com.mikelsmaci.paintingStore.controller;
 
 
+import com.mikelsmaci.paintingStore.entity.MyPaintingList;
 import com.mikelsmaci.paintingStore.entity.Painting;
+import com.mikelsmaci.paintingStore.service.MyPaintingListService;
 import com.mikelsmaci.paintingStore.service.PaintingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,8 @@ public class PaintingController {
     @Autowired
     //create a painting service object
     private PaintingService service;
+    @Autowired
+    private MyPaintingListService myPaintingListService;
     @GetMapping("/")
 //create a method for home
     public String home() {
@@ -47,5 +51,14 @@ public class PaintingController {
     @GetMapping("/my_paintings")
     public String getMyPaintings() {
         return "myPaintings";
+    }
+    @RequestMapping("/mylist/{id}")
+    public String getMyList(@PathVariable("id") int id) {
+       Painting painting=service.getPaintingById(id);
+       //for object, we create in the top autowired annotation for my painting service
+        MyPaintingList myPaintingList = new MyPaintingList(painting.getId(),painting.getName(),painting.getAuthor(),painting.getPrice());
+        myPaintingListService.saveMyPaintings(myPaintingList);
+        return "redirect:/my_paintings";
+        //go to Painting service and create e method
     }
 }

@@ -51,7 +51,8 @@
             <td th:text="${p.name}"></td>
             <td th:text="${p.author}"></td>
             <td th:text="${p.price}"></td>
-            <td><a class="btn btn-secondary btn-sm">Add to MyPainting</a></td>
+            <td><a class="btn btn-secondary btn-sm" th:href="@{/myList/{id}(id=${p.id})}">Add to MyPainting</a></td>
+            <!--handel this path to controller package PaintingController-->
         </tr>
 
         </tbody>

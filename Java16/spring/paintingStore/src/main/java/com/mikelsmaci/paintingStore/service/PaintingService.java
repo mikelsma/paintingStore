@@ -22,5 +22,9 @@ public class PaintingService {
         return paintingRepository.findAll();
         //now go to book controller
     }
+    public Painting getPaintingById(int id) {
+        return paintingRepository.findById(id).get();
+        //go back to painting controller class and call this method
+    }
 
 }
