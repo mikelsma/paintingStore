@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Painting {
+
     //we add id attribute
     @Id
     //we add annotation for generating incremented id
@@ -24,11 +25,15 @@ public class Painting {
         this.author = author;
         this.price = price;
     }
+
+
     //then we create a constructor for supper class
     public Painting() {
         super();
         //TODO Auto-generated constructor stub
     }
+
+
     //then we generate getters and setters
 
     public int getId() {

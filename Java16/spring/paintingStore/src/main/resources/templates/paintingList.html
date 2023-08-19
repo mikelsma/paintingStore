@@ -52,9 +52,9 @@
             <td th:text="${p.name}"></td>
             <td th:text="${p.author}"></td>
             <td th:text="${p.price}"></td>
-            <td><a class="btn btn-secondary btn-sm" th:href="@{/myList/{id}(id=${p.id})}">Add to MyPainting</a>
-                <a style="color:blue" th:href="@/editPainting/{id} (id=${p.id})}"><i class="fa-solid fa-pen-to-square ms-4"></i></a>
-                <a style="color:red"><i class="fa-solid fa-trash ms-4"></i></a>
+            <td><a class="btn btn-secondary btn-sm" th:href="@{/mylist/{id}(id=${p.id})}">Add To Painting</a>
+                <a style="color:blue" th:href="@{/editPainting/{id}(id=${p.id})}"><i class="fa-solid fa-pen-to-square ms-4"></i></a>
+                <a style="color:red" th:href="@{/deletePainting/{id}(id=${p.id})}"><i class="fa-solid fa-trash ms-4"></i></a>
             </td>
                    </tr>
 

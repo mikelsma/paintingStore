@@ -13,18 +13,27 @@ public class PaintingService {
     //first create a method save to save the object
     @Autowired
     private PaintingRepository paintingRepository;
+
     public void save(Painting painting) {
         paintingRepository.save(painting);
     }
+
     //now to fetch data in table format
     // create a method getAllPainting
     public List<Painting> getAllPainting() {
         return paintingRepository.findAll();
         //now go to book controller
+
     }
+
     public Painting getPaintingById(int id) {
         return paintingRepository.findById(id).get();
         //go back to painting controller class and call this method
+    }
+
+    //create a method for deleting painting
+    public void deleteById(int id) {
+        paintingRepository.deleteById(id);
     }
 
 }

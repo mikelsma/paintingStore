@@ -3,6 +3,8 @@ package com.mikelsmaci.paintingStore.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+
 
 //adding the annotation entity it will create my painting list in database
 //so it will import the package from persistence
@@ -18,6 +20,10 @@ public class MyPaintingList {
     private String author;
     private String price;
 
+    public MyPaintingList() {
+        super();
+    }
+
     public MyPaintingList(int id, String name, String author, String price) {
         this.id = id;
         this.name = name;
@@ -25,9 +31,6 @@ public class MyPaintingList {
         this.price = price;
     }
 
-    public MyPaintingList() {
-        super();
-    }
 
     public int getId() {
         return id;
